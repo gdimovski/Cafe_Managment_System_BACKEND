@@ -1,5 +1,6 @@
 package mk.ukim.finki.wpproekt.seminarska.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import mk.ukim.finki.wpproekt.seminarska.model.enums.TableStatus;
 
@@ -15,16 +16,16 @@ public class Desk {
     private Long id;
     private Long tableNumber;
     private TableStatus tableStatus;
-
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="table")
+    List<Order> orders;
 
     public Desk() {
-
     }
 
     public Desk(Long tableNumber, TableStatus tableStatus) {
         this.tableNumber = tableNumber;
         this.tableStatus = tableStatus;
-
     }
 
     public Long getId() {

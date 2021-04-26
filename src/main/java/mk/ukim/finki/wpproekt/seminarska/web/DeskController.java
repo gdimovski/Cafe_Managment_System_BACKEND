@@ -2,8 +2,11 @@ package mk.ukim.finki.wpproekt.seminarska.web;
 
 
 import mk.ukim.finki.wpproekt.seminarska.model.Desk;
+import mk.ukim.finki.wpproekt.seminarska.model.Order;
+import mk.ukim.finki.wpproekt.seminarska.model.enums.OrderStatus;
 import mk.ukim.finki.wpproekt.seminarska.model.enums.TableStatus;
 import mk.ukim.finki.wpproekt.seminarska.service.DeskService;
+import mk.ukim.finki.wpproekt.seminarska.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -17,6 +20,8 @@ public class DeskController {
 
     @Autowired
     DeskService deskService;
+    @Autowired
+    OrderService orderService;
 
     @GetMapping("/desks")
     public List<Desk> getTables(){

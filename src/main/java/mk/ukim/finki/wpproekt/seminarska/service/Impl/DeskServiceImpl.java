@@ -5,12 +5,14 @@ import mk.ukim.finki.wpproekt.seminarska.model.Order;
 import mk.ukim.finki.wpproekt.seminarska.model.Product;
 import mk.ukim.finki.wpproekt.seminarska.model.enums.OrderStatus;
 import mk.ukim.finki.wpproekt.seminarska.model.enums.TableStatus;
+import mk.ukim.finki.wpproekt.seminarska.model.exceptions.DeskNotFoundException;
 import mk.ukim.finki.wpproekt.seminarska.model.exceptions.InvalidDeskIdException;
 import mk.ukim.finki.wpproekt.seminarska.model.exceptions.InvalidProductIdException;
 import mk.ukim.finki.wpproekt.seminarska.repository.DeskRepository;
 import mk.ukim.finki.wpproekt.seminarska.repository.OrderRepository;
 import mk.ukim.finki.wpproekt.seminarska.repository.ProductRepository;
 import mk.ukim.finki.wpproekt.seminarska.service.DeskService;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -66,12 +68,18 @@ public class DeskServiceImpl implements DeskService {
     }
 
     @Override
-    public List<Order> findAllActiveOrders(Long id) {
-        return this.orderRepository.findAll()
-                .stream()
-                .filter(order -> order.getStatus().equals(OrderStatus.ACTIVE) && order.getTable().getId().equals(id))
-                .collect(Collectors.toList());
+    public Order findOrder(Long id) {
+        return null;
     }
+
+//
+//    @Override
+//    public List<Order> findAllActiveOrders(Long id) {
+//        return this.orderRepository.findAll()
+//                .stream()
+//                .filter(order -> order.getStatus().equals(OrderStatus.ACTIVE) && order.getTable().getId().equals(id))
+//                .collect(Collectors.toList());
+//    }
 
 
 }

@@ -86,7 +86,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<OrderItem> findAllOrderItemsByDeskId(Long deskId) {
-        Order order = orderRepository.findOrderByTable(deskRepository.findById(deskId).orElseThrow(DeskNotFoundException::new));
+        Order order = orderRepository.findOrderByTableAndStatus(deskRepository.findById(deskId).orElseThrow(DeskNotFoundException::new), OrderStatus.ACTIVE);
         return orderItemRepository.findOrderItemByOrder(order);
     }
 
