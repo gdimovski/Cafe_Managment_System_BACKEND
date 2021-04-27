@@ -19,11 +19,5 @@ public interface ReceiptService {
     List<Receipt> findAll();
     List<Receipt> getBetweenDates(LocalDateTime first,LocalDateTime second);
 
-
-
-
-
-
-
-    }
+}
 

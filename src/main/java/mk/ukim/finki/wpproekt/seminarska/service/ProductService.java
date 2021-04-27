@@ -1,11 +1,8 @@
 package mk.ukim.finki.wpproekt.seminarska.service;
 
 import mk.ukim.finki.wpproekt.seminarska.model.Product;
-import mk.ukim.finki.wpproekt.seminarska.model.enums.ProductType;
-import mk.ukim.finki.wpproekt.seminarska.model.enums.SimpleProductType;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProductService {
     List<Product> findAll();

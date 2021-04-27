@@ -1,16 +1,12 @@
 package mk.ukim.finki.wpproekt.seminarska.service.Impl;
 
 import mk.ukim.finki.wpproekt.seminarska.model.Product;
-import mk.ukim.finki.wpproekt.seminarska.model.enums.ProductType;
-import mk.ukim.finki.wpproekt.seminarska.model.enums.SimpleProductType;
 import mk.ukim.finki.wpproekt.seminarska.model.exceptions.ProductNotFoundException;
 import mk.ukim.finki.wpproekt.seminarska.repository.ProductRepository;
 import mk.ukim.finki.wpproekt.seminarska.service.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 @Service

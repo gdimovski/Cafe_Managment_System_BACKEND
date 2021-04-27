@@ -34,8 +34,6 @@ public class OrderItemServiceImpl implements OrderItemService {
 
     @Override
     public OrderItem create(Product product,Order order, Integer quantity) {
-//        Product temp = this.productRepository.findById(product.getId()).get();
-//        temp.setQuantity(temp.getQuantity() - quantity);
         return new OrderItem(product,order,quantity);
     }
 

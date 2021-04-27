@@ -20,10 +20,13 @@ public class ReceiptsController {
 
     @Autowired
     ReceiptService receiptService;
+
     @Autowired
     DeskService deskService;
+
     @Autowired
     OrderService orderService;
+
 
     @GetMapping("/receipts")
     public List<Receipt> getAllReceipts()
@@ -32,12 +35,14 @@ public class ReceiptsController {
 
     }
 
+
     @DeleteMapping("/receipts/delete/{id}")
     public Receipt deleteReceipt(@PathVariable Long id)
     {
         return this.receiptService.delete(id);
 
     }
+
 
     @PostMapping("/orders/{orderId}/receipts/create")
     public Receipt createReceiptForOrder(@PathVariable Long orderId)

@@ -16,7 +16,7 @@ public interface DeskService {
     Desk create(Long tableNumber, TableStatus status);
     Desk update(Long id, Long tableNumber, TableStatus status);
     Desk delete(Long id);
-    Order findOrder(Long id);
+
 
 
 }

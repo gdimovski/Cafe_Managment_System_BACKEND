@@ -67,19 +67,8 @@ public class DeskServiceImpl implements DeskService {
         return desk;
     }
 
-    @Override
-    public Order findOrder(Long id) {
-        return null;
-    }
 
-//
-//    @Override
-//    public List<Order> findAllActiveOrders(Long id) {
-//        return this.orderRepository.findAll()
-//                .stream()
-//                .filter(order -> order.getStatus().equals(OrderStatus.ACTIVE) && order.getTable().getId().equals(id))
-//                .collect(Collectors.toList());
-//    }
+
 
 
 }

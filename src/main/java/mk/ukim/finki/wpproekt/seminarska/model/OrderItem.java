@@ -11,7 +11,7 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    @OneToOne
+    @ManyToOne
     public Product product;
     @ManyToOne
     public Order order;

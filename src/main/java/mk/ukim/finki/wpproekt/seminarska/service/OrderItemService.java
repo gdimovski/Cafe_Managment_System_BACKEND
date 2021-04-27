@@ -13,6 +13,6 @@ public interface OrderItemService {
     OrderItem delete(Long id);
     OrderItem findById(Long id);
     List<OrderItem> findAll();
-    List<OrderItem> findByOrder(Long orderId);
-    List<OrderItem> findByDesk(Long deskId);
+    public List<OrderItem> findByOrder(Long orderId);
+    public List<OrderItem> findByDesk(Long deskId);
 }

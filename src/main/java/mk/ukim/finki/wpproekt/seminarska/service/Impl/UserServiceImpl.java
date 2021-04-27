@@ -22,8 +22,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(String username, String password) {
-        return null;
+        if (username==null || username.isEmpty() || password==null || password.isEmpty()) {
+            throw new InvalidArgumentsException();
+        }
+        return userRepository.findByUsernameAndPassword(username,
+                passwordEncoder.encode(password)).orElseThrow(InvalidUserCredentialsException::new);
     }
+
+
+
 
     @Override
     public User register(String username, String email, String password, String repeatPassword, Role role) {
@@ -36,7 +43,7 @@ public class UserServiceImpl implements UserService {
         if(this.userRepository.findByUsername(username).isPresent() ){
             throw new UsernameAlreadyExistsException(username);
         }
-        User user = new User(username,password,email,role);
+        User user = new User(username,passwordEncoder.encode(password),email,role);
         return userRepository.save(user);
     }
 

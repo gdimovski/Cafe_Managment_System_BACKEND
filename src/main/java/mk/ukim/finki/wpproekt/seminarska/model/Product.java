@@ -2,13 +2,10 @@ package mk.ukim.finki.wpproekt.seminarska.model;
 
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import mk.ukim.finki.wpproekt.seminarska.model.enums.ProductType;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Data
@@ -21,6 +18,9 @@ public class Product{
     private String name;
     private Integer quantity;
     private Integer price;
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="product")
+    List<OrderItem> orderItems;
 
 
     public Product(String code, String name, Integer quantity, Integer price) {
